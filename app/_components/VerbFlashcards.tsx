@@ -15,14 +15,14 @@ let memoryCache: Record<string, any> = {};
 const Flashcard = ({ cardData, isFlipped, onFlip, showRomaji }: any) => {
   if (!cardData) return null;
   return (
-    <div className="scene w-full h-80 md:h-96">
+    <div className="scene w-full h-80 md:h-96 sm:h-75">
       <div className={`card cursor-pointer ${isFlipped ? "is-flipped" : ""}`} onClick={onFlip}>
         {/* Front */}
         <div className="card__face card__face--front">
           <div className="text-center">
             <h2 className="japanese-text text-6xl md:text-7xl font-bold text-gray-900">{cardData.kanji}</h2>
             {showRomaji && <p className="text-gray-500 text-xl mt-2">{cardData.kana}</p>}
-            <p className="mt-8 text-sm text-gray-400">Click or press Space to flip</p>
+            {/* <p className="mt-8 text-sm text-gray-400">Click or press Space to flip</p> */}
           </div>
         </div>
         {/* Back */}
@@ -186,7 +186,7 @@ export default function VerbFlashcards() {
 
       </style>
 
-      <div className="bg-gray-100 flex items-center justify-center min-h-screen p-4">        
+      <div className="bg-gray-100 flex items-center justify-center p-4">        
         <div className="w-full max-w-md mx-auto">          
           <div className="relative mb-8">
             {/* Settings Button in Top-Right */}
@@ -224,7 +224,7 @@ export default function VerbFlashcards() {
 
             {/* Controls */}
             <div className="mt-6 flex justify-between">
-              <button onClick={handlePrev} className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-300">Previous</button>
+              <button onClick={handlePrev} className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-300">Prev</button>
               <button onClick={handleNext} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">Next</button>
             </div>
 
