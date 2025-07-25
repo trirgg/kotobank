@@ -18,7 +18,7 @@ export const metadata = {
   description: 'Learn Japanese vocabulary with interactive flashcards.',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${notoSansJP.variable} bg-gray-100`}>
